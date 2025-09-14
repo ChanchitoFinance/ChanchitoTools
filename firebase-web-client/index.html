@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Identity Token POC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .auth-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 2px solid #f1f2f6;
+            border-radius: 10px;
+            background: #f8f9fa;
+        }
+
+        .auth-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn.google {
+            background: linear-gradient(135deg, #4285f4, #34a853);
+        }
+
+        .btn.anonymous {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        }
+
+        .token-display {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            word-break: break-all;
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #34495e;
+        }
+
+        .user-info {
+            background: #e8f5e8;
+            border: 1px solid #4caf50;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 10px;
+        }
+
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .status.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .form-group {
+            margin: 15px 0;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            margin: 8px 0;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .button-group .btn {
+            flex: 1;
+            min-width: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔥 Firebase Identity Token POC</h1>
+            <p>Demonstrate different Firebase authentication methods and display identity tokens</p>
+            <div id="loadingStatus" class="status info">
+                <span class="loading"></span>
+                Loading Firebase configuration...
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Google Authentication Section -->
+            <div class="auth-section">
+                <h3>🔐 Google Authentication</h3>
+                <p>Sign in with Google to get an identity token</p>
+                <button id="googleSignIn" class="btn google">
+                    <span id="googleLoading" class="loading hidden"></span>
+                    Sign in with Google
+                </button>
+                <div id="googleStatus" class="status hidden"></div>
+                <div id="googleUserInfo" class="user-info hidden"></div>
+                <div id="googleToken" class="token-display hidden"></div>
+            </div>
+
+            <!-- Anonymous Authentication Section -->
+            <div class="auth-section">
+                <h3>👤 Anonymous Authentication</h3>
+                <p>Create an anonymous user to get an identity token</p>
+                <button id="anonymousSignIn" class="btn anonymous">
+                    <span id="anonymousLoading" class="loading hidden"></span>
+                    Sign in Anonymously
+                </button>
+                <div id="anonymousStatus" class="status hidden"></div>
+                <div id="anonymousUserInfo" class="user-info hidden"></div>
+                <div id="anonymousToken" class="token-display hidden"></div>
+            </div>
+
+            <!-- Email/Password Authentication Section -->
+            <div class="auth-section">
+                <h3>📧 Email/Password Authentication</h3>
+                <p>Sign in with email and password (requires user to be created in Firebase Console first)</p>
+                
+                <div class="form-group">
+                    <input type="email" id="emailInput" placeholder="Enter your email" class="form-input">
+                    <input type="password" id="passwordInput" placeholder="Enter your password" class="form-input">
+                </div>
+                
+                <div class="button-group">
+                    <button id="signInEmail" class="btn">
+                        <span id="signInLoading" class="loading hidden"></span>
+                        Sign In
+                    </button>
+                    <button id="createAccount" class="btn" style="background: linear-gradient(135deg, #27ae60, #2ecc71);">
+                        <span id="createLoading" class="loading hidden"></span>
+                        Create Account
+                    </button>
+                </div>
+                
+                <div id="createStatus" class="status hidden"></div>
+                <div id="createUserInfo" class="user-info hidden"></div>
+                <div id="createToken" class="token-display hidden"></div>
+            </div>
+
+            <!-- Clear All Section -->
+            <div class="auth-section">
+                <h3>🧹 Clear All</h3>
+                <p>Clear all displayed tokens and reset the interface</p>
+                <button id="clearAll" class="btn" style="background: linear-gradient(135deg, #95a5a6, #7f8c8d);">
+                    Clear All
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module" src="client.js"></script>
+</body>
+</html>
