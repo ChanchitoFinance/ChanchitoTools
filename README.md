@@ -21,6 +21,10 @@ Each tool in this repository has its own license. Please check the LICENSE file 
 ![](./ChanchitoTools.FirebaseWebClient/docs/images/image1.png)
 A lightweight, client-side only web application demonstrating Firebase authentication methods and identity token retrieval.
 
+### [Testing Abstractions](./ChanchitoTools.TestingAbstractions/)
+![](./ChanchitoTools.TestingAbstractions/Documentation/Images/image1.png)  
+A comprehensive .NET testing library that provides robust testing utilities, abstractions, and helpers to streamline your testing workflow. Features include test data builders, custom assertions, database testing support, and integration testing infrastructure.
+
 ## Getting Started
 
 1. **Browse the Tools** - Each tool has its own directory with detailed documentation
