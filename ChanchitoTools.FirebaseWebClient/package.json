@@ -11,6 +11,6 @@
     "express": "^4.18.2"
   },
   "keywords": ["firebase", "authentication", "web-client", "poc"],
-  "author": "",
-  "license": "MIT"
+  "author": "Chanchito",
+  "license": "MPL-2.0"
 }

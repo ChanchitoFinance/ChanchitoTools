@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<LangVersion>latest</LangVersion>
+		
+		<!-- Package metadata for external consumption -->
+		<PackageId>ChanchitoTools.TestingAbstractions</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>Chanchito</Authors>
+		<Description>Testing abstractions and utilities for csharp backend systems</Description>
+		<PackageTags>testing;abstractions;backend;utilities</PackageTags>
+		<PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		
+		<!-- Generate package on build -->
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		
+		<!-- Assembly metadata -->
+		<AssemblyTitle>ChanchitoTools Testing Abstractions</AssemblyTitle>
+		<AssemblyDescription>Testing abstractions and utilities for Chanchito backend systems</AssemblyDescription>
+		<AssemblyCompany>Chanchito</AssemblyCompany>
+		<AssemblyProduct>ChanchitoTools</AssemblyProduct>
+		<AssemblyCopyright>Copyright © Chanchito 2024</AssemblyCopyright>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.7" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.7" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.7" />
+		
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="8.0.0" />
+		
+		<PackageReference Include="Moq" Version="4.20.70" />
+		<PackageReference Include="xunit" Version="2.6.6" />
+		<PackageReference Include="xunit.extensibility.execution" Version="2.6.6" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+</Project>
