@@ -25,6 +25,10 @@ A lightweight, client-side only web application demonstrating Firebase authentic
 ![](./ChanchitoTools.TestingAbstractions/Documentation/Images/image1.png)  
 A comprehensive .NET testing library that provides robust testing utilities, abstractions, and helpers to streamline your testing workflow. Features include test data builders, custom assertions, database testing support, and integration testing infrastructure.
 
+### [Command Management](./ChanchitoTools.CommandManagement/)
+![](./ChanchitoTools.CommandManagement/Documentation/Images/image.png)  
+A simple, reusable command management system for .NET applications with dependency injection support. Features include multiple command execution, command groups, built-in logging, environment safety checks, and seamless integration with ASP.NET Core applications.
+
 ## Getting Started
 
 1. **Browse the Tools** - Each tool has its own directory with detailed documentation
