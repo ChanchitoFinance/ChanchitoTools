@@ -29,9 +29,9 @@ namespace ChanchitoTools.CommandManagement.Core
         /// <returns>True if a management command is present</returns>
         public static bool HasCommand(string[] args)
         {
-            return args.Length > 0 && 
-                   args[0].StartsWith("--") && 
-                   args[0].Length > 2;
+            return args.Length > 0 &&
+                   args[0].StartsWith("--") &&
+                   args[0].Length >= 2;
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace ChanchitoTools.CommandManagement.Core
                 {
                     _logger?.LogInformation("Executing command: {CommandName}", command.Name);
                     var result = await cmd.ExecuteAsync(serviceProvider, command.Arguments, cancellationToken);
-                    
+
                     if (result != 0)
                     {
                         _logger?.LogError("Command {CommandName} failed with exit code {ExitCode}", command.Name, result);
