@@ -29,6 +29,10 @@ A comprehensive .NET testing library that provides robust testing utilities, abs
 ![](./ChanchitoTools.CommandManagement/Documentation/Images/image.png)  
 A simple, reusable command management system for .NET applications with dependency injection support. Features include multiple command execution, command groups, built-in logging, environment safety checks, and seamless integration with ASP.NET Core applications.
 
+### [Context Engineering](./ChanchitoTools.ContextEngineering/)
+![](./ChanchitoTools.ContextEngineering/Documentation/Images/image.png)
+A comprehensive toolkit for crafting effective AI prompts and content generation strategies. Transform technical questions into engaging, emotionally-resonant narratives optimized for social media platforms, featuring storytelling frameworks, multi-platform support, and ready-to-use AI prompt templates.
+
 ## Getting Started
 
 1. **Browse the Tools** - Each tool has its own directory with detailed documentation
