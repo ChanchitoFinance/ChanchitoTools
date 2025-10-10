@@ -1033,3 +1033,7 @@ obj/
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/dotnetcore,visualstudio,csharp
+
+# Chanchito Tools - Business Context
+# Contains sensitive company information and should not be committed
+ChanchitoTools.ContextEngineering/Business/

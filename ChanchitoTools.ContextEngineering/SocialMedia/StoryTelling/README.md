@@ -13,11 +13,12 @@ Transform technical or conceptual questions into:
 ## File Structure
 
 ### Core Files
-- **STORY_STRUCTURE.md** - The 3-part story framework and formatting rules
+- **STORY_STRUCTURE.md** - The 4-part story framework (Value → Story → CTA → Hashtags)
+- **CONCISE_STYLE_GUIDE.md** - Techniques for punchy, direct writing
 - **WRITING_GUIDELINES.md** - Techniques for emotional connection and "showing"
 - **EXAMPLES.md** - Reference stories demonstrating best practices
 - **AI_PROMPT_TEMPLATE.md** - Complete prompt template for story generation
-- **PLATFORM_SPECS.md** - Social media platform specifications (LinkedIn default)
+- **PLATFORM_SPECS.md** - Social media platform specs with hashtag strategy (LinkedIn default)
 
 ## Quick Start
 
@@ -28,10 +29,13 @@ Transform technical or conceptual questions into:
 
 ## Key Principles
 
-- **Show, don't tell**: Use scenes, not explanations
-- **Emotional first**: Connect to feelings before facts
-- **Brevity**: Maximum 200 words
-- **Structure**: Value → Story → Call to Action
+- **Concise and punchy**: Short sentences, minimal elaboration
+- **Show, don't tell**: Quick scenes with concrete examples
+- **Specific numbers**: 347 conflicts, 12,000 transactions, 3 weeks
+- **Direct advice**: Tell readers exactly what to do
+- **Maximum 200 words**: Excluding hashtags
+- **Structure**: Value → Story → CTA → Hashtags
+- **Always include hashtags**: #code #software #topic #chanchito
 - **Platform**: LinkedIn (customizable by developer)
 
 ## Input Format
@@ -42,4 +46,6 @@ Any technical or conceptual question, such as:
 
 ## Output Format
 A LinkedIn-ready story following the prescribed structure, emotionally engaging, and actionable.
+
+**File Format**: All generated stories are **appended to a single `Generated_Stories.txt` file**. Each story includes metadata (question, date, platform, word count) and clear separators. This single-file approach keeps all your content organized, searchable, and easy to manage. Never create separate files—always append to the master file.
 

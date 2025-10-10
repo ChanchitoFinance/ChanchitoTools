@@ -220,6 +220,35 @@ When generating your own stories:
 3. **Feel the emotion** - where do you feel the frustration, relief, surprise?
 4. **Identify the insight** - what's the one thing you remember?
 5. **Examine the ending** - does it give you something actionable?
+6. **Append to single file** - All stories go in `Generated_Stories.txt`
 
 Use these examples as templates, but **never copy them**. Each story should be unique, authentic, and relevant to the specific question being answered.
+
+### Single File Approach for Generated Stories
+
+**Important**: All generated stories are appended to a single file:
+- **File**: `Generated_Stories.txt`
+- **Location**: `Generated_Stories/` folder
+- **Format**: Each story includes metadata header with separators
+- **Never create new files**: Always append to existing `Generated_Stories.txt`
+
+### Story Entry Format
+
+Each story in the file includes:
+```
+================================================================================
+QUESTION: [The question being answered]
+DATE: [YYYY-MM-DD]
+PLATFORM: [LinkedIn/Twitter/etc.]
+WORD COUNT: [###]
+================================================================================
+
+[Story content here]
+
+================================================================================
+
+
+```
+
+This makes it easy to search and find specific stories using Ctrl+F / Cmd+F.
 

@@ -23,63 +23,89 @@ Every story MUST follow this exact structure:
 ---
 
 ### Part 2: The Story (Body)
-**Length**: 120-140 words
-**Purpose**: Show a real-life scene that embodies the concept
-**Tone**: Personal, visual, emotional
+**Length**: 100-130 words
+**Purpose**: Show a real-life scene with minimal elaboration
+**Tone**: Direct, punchy, conversational
 
 **MUST Include:**
-- **A specific scene** with sensory details
-- **A character** (can be "you", "a developer", "my colleague", etc.)
-- **A moment of realization** or turning point
-- **Concrete actions** not abstract concepts
-- **Emotional resonance** (frustration, relief, surprise, understanding)
+- **Quick scene setup** - no lengthy descriptions
+- **Concrete examples** - specific numbers, actions
+- **The problem** stated clearly
+- **The realization** or turning point
+- **Short, punchy sentences** for impact
 
 **MUST AVOID:**
-- Long explanations
-- Abstract definitions
-- Bullet points
-- Technical jargon without context
-- Lecturing tone
+- Long explanations or backstory
+- Overly detailed descriptions
+- Multiple scenes in one story
+- Lengthy dialogue
+- Verbose language
 
-**Showing vs Telling:**
-- ❌ TELLING: "It's important to talk to domain experts"
-- ✅ SHOWING: "Sarah leaned back from her laptop, confused. Then she walked to sales and asked, 'What actually happens when a customer upgrades?' The answer changed everything."
+**Concise vs Verbose:**
+- ❌ VERBOSE: "We spent three hours in a conference room with whiteboards full of diagrams trying to understand what the warehouse manager was telling us about how the order processing system worked in their facility."
+- ✅ CONCISE: "The warehouse manager frowned at our 'Order' class. 'We don't process orders. We pick, pack, and ship. Three different systems.'"
 
 ---
 
 ### Part 3: Call to Action or Valuable Tip (Closing)
-**Length**: 30-40 words
-**Purpose**: Give the reader something actionable
-**Tone**: Direct, helpful, empowering
+**Length**: 30-50 words
+**Purpose**: Drive home the lesson with actionable advice
+**Tone**: Direct, authoritative, clear
 
 **Options:**
-1. **Actionable tip**: Specific next step readers can take
-2. **Question for reflection**: Prompts self-examination
-3. **Invitation to engage**: Asks for comments/shares
-4. **Key takeaway**: Memorable principle to remember
+1. **Strong directive**: Tell them exactly what to do
+2. **Key principle**: Memorable rule to follow
+3. **Warning**: What NOT to do and why
 
 **Examples:**
-- "Next time you're stuck on a model, close your laptop. Find the person who lives in that domain every day. Listen."
-- "What's one conversation you've been avoiding that might unlock your design?"
-- "Remember: The goal isn't the perfect model. It's the model that helps your team move forward."
+- "Test security paths first. Improper authentication, missing authorization, unvalidated input—these don't just break features, they break trust."
+- "Test the flows that make you money first. Everything else can wait."
+- "Fresh code has fresh bugs. Test what you changed most recently."
+
+### Part 4: Hashtags (Required)
+**Length**: 4-6 hashtags
+**Purpose**: Increase reach and discoverability
+**Placement**: After the story, separated by a blank line
+
+**Format:**
+```
+[Story content ends]
+
+#code #software #[topic] #[lesson1] #[lesson2] #chanchito
+```
+
+**Examples:**
+- `#code #software #security #tip #chanchito`
+- `#code #software #testing #bugprevention #chanchito`
+- `#code #software #conventions #teamwork #chanchito`
+
+**Always include:**
+- `#code` (first)
+- `#software` (second)
+- `#chanchito` (last)
+- 1-3 topic-specific hashtags in between
 
 ---
 
 ## Complete Story Formula
 
 ```
-[MAIN VALUE: 1-2 sentences stating the core insight]
+[MAIN VALUE: 1-2 punchy sentences stating the core insight]
 
-[STORY: 120-140 words showing a real scene with:
- - Specific setting/character
- - Concrete actions and details
- - Emotional moment
- - Realization or transformation]
+[STORY: 100-130 words with:
+ - Quick scene setup
+ - Concrete examples (numbers, specifics)
+ - Problem clearly stated
+ - Realization or lesson
+ - Short, punchy sentences]
 
-[CALL TO ACTION: 30-40 words giving:
- - Actionable advice, OR
- - Reflective question, OR  
- - Memorable principle]
+[CALL TO ACTION: 30-50 words giving:
+ - Direct actionable advice, OR
+ - Strong principle, OR
+ - Clear warning]
+
+[HASHTAGS: 4-6 tags]
+#code #software #[topic] #[lesson] #chanchito
 ```
 
 ---
@@ -87,35 +113,48 @@ Every story MUST follow this exact structure:
 ## Hard Rules
 
 ✅ **DO:**
-- Keep total word count under 200 words
-- Use short paragraphs (2-3 sentences max)
-- Include sensory or emotional details
+- Keep total word count under 200 words (story + CTA, excluding hashtags)
+- Use short paragraphs (1-3 sentences)
+- Use short, punchy sentences
+- Include specific numbers and examples
 - Focus on one single insight
-- End with clear value
+- End with clear, direct advice
+- Always include 4-6 hashtags
 
 ❌ **DON'T:**
-- Exceed 200 words
+- Exceed 200 words for story content
+- Over-elaborate or add unnecessary details
 - Use multiple examples in one story
-- Include technical definitions
-- Write in academic/formal tone
-- Create complex narratives with multiple scenes
+- Include long dialogue exchanges
+- Write lengthy scene descriptions
+- Forget hashtags
+- Use more than 6 hashtags
 
 ---
 
 ## Format Specifications
 
 ### Paragraph Breaks
-- Main Value: Standalone paragraph
-- Story: 2-4 paragraphs with line breaks between
-- Call to Action: Standalone paragraph
+- Main Value: Standalone paragraph (1-2 sentences)
+- Story: 2-4 SHORT paragraphs with line breaks between
+- Call to Action: Standalone paragraph (1-2 sentences)
+- Hashtags: Separate line after blank line
 
 ### Line Spacing
-Use single blank line between paragraphs for LinkedIn readability.
+- Single blank line between paragraphs within story
+- Double blank line before hashtags
 
 ### Emphasis (Optional)
 - Use **bold** sparingly for key phrases
 - Never use ALL CAPS (except for acronyms)
-- Emoji use: Maximum 1-2, only if they add meaning
+- Emoji use: Maximum 0-1, only if natural
+
+### Hashtag Formatting
+```
+[Last sentence of story]
+
+#code #software #topic #chanchito
+```
 
 ---
 
@@ -132,4 +171,5 @@ Before finalizing a story, verify:
 - [ ] Uses "show, don't tell" technique
 - [ ] Feels personal and relatable
 - [ ] LinkedIn-appropriate tone (professional but human)
+- [ ] Appended to `Generated_Stories.txt` with metadata and separators
 

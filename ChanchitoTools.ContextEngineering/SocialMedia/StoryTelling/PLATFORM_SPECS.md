@@ -23,30 +23,73 @@ This file contains specifications for different social media platforms. **Linked
 - ✅ Professional yet personal voice
 - ✅ Share lessons and insights
 - ✅ Use concrete examples from work
-- ✅ Ask thought-provoking questions
-- ✅ Encourage meaningful discussion
+- ✅ Short, punchy sentences
+- ✅ **Always include hashtags** (4-6 tags)
+- ✅ Format: #code #software #topic #chanchito
 - ✅ Bold text for emphasis (1-2 uses)
-- ✅ Emoji sparingly (0-2 per post)
+- ✅ Emoji sparingly (0-1 per post)
+
+### Hashtag Strategy:
+**Required Format:**
+```
+[Story content]
+
+#code #software #[topic] #[lesson1] #[lesson2] #chanchito
+```
+
+**Always Include:**
+1. **#code** (first) - Broadest developer reach
+2. **#software** (second) - Tech audience
+3. **#chanchito** (last) - Brand identity
+4. **1-3 topic tags** (middle) - Specific to story content
+
+**Topic Tag Examples:**
+- #security #bugprevention #testing
+- #conventions #teamwork #codequality
+- #refactoring #architecture #cleancode
+- #debugging #performance #bestpractices
 
 ### Avoid:
 - ❌ Overly casual language
 - ❌ Excessive self-promotion
 - ❌ Clickbait tactics
-- ❌ Multiple hashtags (max 3-5)
-- ❌ Too many emoji
+- ❌ **Forgetting hashtags** (required!)
+- ❌ Too many hashtags (max 6, min 4)
+- ❌ Wrong hashtag order (must be: #code #software ... #chanchito)
+- ❌ Too many emoji (max 1)
 - ❌ Purely theoretical content
+- ❌ Verbose, wordy writing
 
 ### Example Format:
 ```
 [Strong opening statement about value]
 
-[First paragraph: Setup the scene]
+[First paragraph: Quick scene setup]
 
-[Second paragraph: The turning point or action]
+[Second paragraph: The problem with concrete examples]
 
-[Third paragraph: The realization or outcome]
+[Third paragraph: The lesson or outcome]
 
-[Call to action or valuable takeaway]
+[Direct call to action]
+
+#code #software #topic #chanchito
+```
+
+**Complete Example:**
+```
+Security bugs don't show up in your error logs. They show up in the news.
+
+My co-founder and I built an e-learning platform. We had a bug list.
+
+UI glitch? Annoying. Slow load? Should optimize. Password reset didn't validate tokens? We'll get to it.
+
+Week two: "I just reset another user's password."
+
+We took the site offline immediately. Three accounts compromised. Client lost a major customer.
+
+Treat security bugs like production fires. Improper authentication, missing authorization, unvalidated input—these don't just break features, they break trust. Test security paths first.
+
+#code #software #security #tip #chanchito
 ```
 
 ---

@@ -17,45 +17,49 @@ Transform the following question into a compelling story:
 ## STORY REQUIREMENTS
 
 ### Structure (MANDATORY):
-1. **Opening Hook (20-30 words)**: Start with a bold, clear statement expressing the main value or insight
-2. **Story Body (120-140 words)**: Show a specific, real-life scene that demonstrates the concept
-3. **Call to Action (30-40 words)**: End with actionable advice, a reflective question, or a memorable principle
+1. **Opening Hook (20-30 words)**: Start with a bold, punchy statement expressing the core insight
+2. **Story Body (100-130 words)**: Show a quick scene with minimal elaboration - concrete examples, short sentences
+3. **Call to Action (30-50 words)**: Direct, actionable advice or strong principle
+4. **Hashtags (4-6 tags)**: Format: #code #software #[topic] #[lesson] #chanchito
 
 ### Total Length:
-- Maximum 200 words
-- No exceptions to this limit
+- Maximum 200 words for story content (excluding hashtags)
+- Concise, punchy writing - cut unnecessary words
 
-### Writing Style:
-- **Show, don't tell**: Use specific scenes with sensory details, not abstract explanations
-- **Emotional connection**: Tap into feelings your audience recognizes (frustration, relief, recognition, curiosity)
-- **Use concrete details**: Specific numbers, actions, dialogue, physical settings
-- **Personal voice**: Conversational, professional but human
-- **Create an "a-ha" moment**: A clear turning point or realization in the story
+### Writing Style - CONCISE AND DIRECT:
+- **Short sentences**: Break long sentences into multiple short ones. Use fragments when effective.
+- **Minimal elaboration**: Cut unnecessary details. Get to the point fast.
+- **Concrete specifics**: Use actual numbers (347 conflicts, 12,000 transactions, 3 weeks)
+- **Direct language**: Active voice, strong verbs, no fluff
+- **Question-answer rhythm** (optional): "UI bug? Annoying. Security bug? Catastrophic."
+- **Skip transitions**: Jump to the point. No "however," "furthermore," etc.
 
-### Scene Requirements:
+### Story Requirements:
 Your story MUST include:
-- A specific setting (meeting, code review, conversation, workspace)
-- A character or characters (use "I", "we", "my colleague", etc.)
-- Concrete actions (not abstract descriptions)
-- An emotional moment or recognition
-- A realization or transformation
+- Quick scene setup (1 sentence)
+- The problem stated clearly
+- Concrete examples with specific numbers
+- The lesson or realization
+- Short, punchy sentences throughout
+- **Hashtags at the end** (4-6 tags)
 
 ### What to AVOID:
-- ❌ Abstract explanations or definitions
-- ❌ Bullet points or lists
+- ❌ Long, elaborate descriptions
+- ❌ Unnecessary backstory or context
+- ❌ Sentences over 20 words (except rare cases)
+- ❌ Verbose language or wordiness
 - ❌ Multiple examples in one story
-- ❌ Academic or formal tone
-- ❌ Technical jargon without context
-- ❌ Exceeding 200 words
-- ❌ Generic advice
-- ❌ Weak or obvious endings
+- ❌ Weak or vague endings
+- ❌ **Forgetting hashtags**
+- ❌ Using more than 6 hashtags or fewer than 4
 
 ### Platform Specifications:
 - **Target Platform**: LinkedIn (default)
-- **Tone**: Professional but conversational
-- **Format**: Short paragraphs with line breaks for readability
-- **Optional**: Use **bold** sparingly for key phrases (1-2 uses max)
-- **Optional**: Maximum 1-2 emoji if they add meaning
+- **Tone**: Professional, direct, conversational
+- **Format**: SHORT paragraphs (1-3 sentences) with line breaks
+- **Hashtags**: REQUIRED - 4-6 tags at end, format: #code #software #topic #chanchito
+- **Optional**: Use **bold** sparingly (1-2 uses max)
+- **Optional**: Maximum 0-1 emoji if natural
 
 ## EXAMPLES OF GOOD STORIES
 
@@ -130,10 +134,13 @@ Follow this process:
 ## OUTPUT FORMAT
 
 Provide only the story text, formatted for LinkedIn with:
-- Line breaks between paragraphs
+- Short paragraphs with line breaks
 - No additional commentary or explanation
 - No labels like "Opening" or "Story Body"
+- **Hashtags on separate line after blank line**
+- Format: `#code #software #topic #chanchito`
 - Ready to copy and paste
+- **Append to `Generated_Stories.txt`** - Never create separate files, always append to the single master file with proper metadata and separators
 
 ## QUALITY CHECKLIST
 
@@ -174,18 +181,22 @@ The developer can modify:
 ### Example Implementation:
 
 ```python
-def generate_story(question: str, platform: str = "LinkedIn", max_words: int = 200):
+def generate_and_append_story(question: str, platform: str = "LinkedIn", max_words: int = 200, output_dir: str = "Generated_Stories"):
     """
-    Generate a story from a technical question
+    Generate a story and append it to the single Generated_Stories.txt file
     
     Args:
         question: The technical or conceptual question to transform
         platform: Target social media platform (default: LinkedIn)
         max_words: Maximum word count (default: 200)
+        output_dir: Directory containing Generated_Stories.txt
     
     Returns:
         Generated story as string
     """
+    import os
+    from datetime import datetime
+    
     # Read the prompt template
     with open('AI_PROMPT_TEMPLATE.md', 'r') as f:
         prompt_template = f.read()
@@ -202,6 +213,35 @@ def generate_story(question: str, platform: str = "LinkedIn", max_words: int = 2
     
     # Send to AI model
     story = call_ai_model(prompt)
+    
+    # Calculate word count
+    word_count = len(story.split())
+    
+    # Create output directory if needed
+    os.makedirs(output_dir, exist_ok=True)
+    
+    # Single file path
+    filepath = os.path.join(output_dir, "Generated_Stories.txt")
+    
+    # Get current date
+    date_str = datetime.now().strftime("%Y-%m-%d")
+    
+    # Create entry with metadata and separators
+    separator = "=" * 80
+    entry = f"\n{separator}\n"
+    entry += f"QUESTION: {question}\n"
+    entry += f"DATE: {date_str}\n"
+    entry += f"PLATFORM: {platform}\n"
+    entry += f"WORD COUNT: {word_count}\n"
+    entry += f"{separator}\n\n"
+    entry += story
+    entry += f"\n\n{separator}\n\n\n"
+    
+    # Append to file (creates if doesn't exist)
+    with open(filepath, 'a', encoding='utf-8') as f:
+        f.write(entry)
+    
+    print(f"Story appended to: {filepath}")
     
     return story
 ```

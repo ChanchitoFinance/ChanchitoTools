@@ -1,0 +1,250 @@
+================================================================================
+QUESTION: Why do test priorities change in early-stage apps?
+DATE: 2025-10-10
+PLATFORM: LinkedIn
+WORD COUNT: 161
+HASHTAGS: #code #software #testing #startup #priorities #chanchito
+================================================================================
+
+Your test priorities change because your risks change. What kills you today won't kill you tomorrow.
+
+Freelancing. E-learning platform. Week one priority: Can users log in? If login breaks, nobody uses the app. We wrote 20 login tests.
+
+Week four: Login worked perfectly. New priority: Can users actually complete a course? Analytics showed 60 percent drop-off mid-course. Login tests were useless now. We needed progress tracking tests.
+
+Week eight: Course completion solid. New priority: Can we handle payment processing? We were about to launch paid tiers. Payment bugs could cost real money.
+
+Three different weeks. Three different priorities. Same app.
+
+Early-stage apps change fast. What's critical today becomes stable tomorrow. New features bring new risks.
+
+Revisit your test priorities weekly in early stages. Test what could break your current sprint, not what worked last month. Your app evolves. Your tests should too.
+
+#code #software #testing #startup #priorities #chanchito
+
+================================================================================
+
+
+================================================================================
+QUESTION: Why do test priorities change in early-stage apps?
+DATE: 2025-10-10
+PLATFORM: LinkedIn
+WORD COUNT: 154
+HASHTAGS: #code #software #testing #agile #startup #chanchito
+================================================================================
+
+Early-stage test priorities change because you're still learning what your users actually need.
+
+At our previous startup, we launched an MVP. Day one priority: Test the sign-up flow. Without users, nothing else matters.
+
+Week two: 500 users signed up. New problem: Nobody's using the main feature. They're all using this side feature we barely tested. Our priorities flipped overnight.
+
+Week four: Main feature redesigned based on feedback. All our original feature tests? Worthless. The feature didn't exist anymore.
+
+Week six: Scaling issues. App slowed with more users. New priority: Performance tests. Feature tests became secondary.
+
+You can't predict what matters until real users touch your product.
+
+In early stages, test what users are actually doing this week, not what you designed last month. Usage patterns reveal real priorities.
+
+#code #software #testing #agile #startup #chanchito
+
+================================================================================
+
+
+================================================================================
+QUESTION: Why do test priorities change in early-stage apps?
+DATE: 2025-10-10
+PLATFORM: LinkedIn
+WORD COUNT: 158
+HASHTAGS: #code #software #testing #mvp #iteration #chanchito
+================================================================================
+
+Test priorities change because you're building to learn, not building to last.
+
+University. Final project. Mobile campus nav app. Week one: Test the map display. Core feature, right?
+
+Week two demo with students: Nobody cared about the map. They wanted faster route calculations. "The map is pretty, but it takes 10 seconds to calculate my route."
+
+We'd spent 40 percent of testing time on map rendering. Route calculation? Barely tested.
+
+Priorities shifted. We rewrote route logic. Wrote 30 new tests. Deleted half our map tests.
+
+Week four: Another shift. Students wanted offline mode. Routes and maps were useless without internet. New priority: Offline data sync.
+
+Early stage means learning what matters. What you think is critical rarely is.
+
+Don't lock your test suite to your first design. In early stages, be ready to throw away half your tests when you learn what users actually value.
+
+#code #software #testing #mvp #iteration #chanchito
+
+================================================================================
+
+
+================================================================================
+QUESTION: How do we keep tests working in a changing codebase?
+DATE: 2025-10-10
+PLATFORM: LinkedIn
+WORD COUNT: 165
+HASHTAGS: #code #software #testing #maintenance #refactoring #chanchito
+================================================================================
+
+Test behavior, not implementation. Tests that check "how" break. Tests that check "what" survive.
+
+Freelancing. Real estate platform. I wrote a test: "Verify addListing calls validateAddress, then saveToDatabase, then sendNotification."
+
+My co-founder refactored. Changed the order. Added caching. Renamed methods. My test broke.
+
+The listing feature still worked perfectly. But my test failed because I tested the implementation, not the behavior.
+
+He showed me his test: "When user adds listing with valid address, listing appears in search and agent receives notification."
+
+He refactored the same code. His test still passed. He tested the outcome, not the steps.
+
+Implementation changes constantly in early codebases. Outcomes shouldn't.
+
+Write tests that verify user-facing behavior and outcomes. Ignore internal implementation details. Your tests will survive refactoring, and you'll spend less time fixing broken tests that test nothing meaningful.
+
+#code #software #testing #maintenance #refactoring #chanchito
+
+================================================================================
+
+
+================================================================================
+QUESTION: How do we keep tests working in a changing codebase?
+DATE: 2025-10-10
+PLATFORM: LinkedIn
+WORD COUNT: 157
+HASHTAGS: #code #software #testing #integration #api #chanchito
+================================================================================
+
+Integration tests survive. Unit tests die. Test at the boundaries that don't change.
+
+Previous startup. Fintech platform. Microservices everywhere. Services changed weekly. New requirements. New features. Refactoring constantly.
+
+Junior dev wrote 200 unit tests. Tested every internal function. Every class. Every method. Every refactor broke 50 tests.
+
+Senior engineer wrote 40 integration tests. Tested API contracts. "When I POST to /transfer with valid data, I get 200 and money moves."
+
+Six months later: Junior's unit tests? Ninety percent deleted or rewritten. Senior's integration tests? Thirty-eight still passing.
+
+Internal implementation changed constantly. API contracts stayed stable.
+
+Focus on integration and API tests in changing codebases. Test the contracts between components, not internal details. Boundaries change slowly. Implementations change fast.
+
+#code #software #testing #integration #api #chanchito
+
+================================================================================
+
+
+================================================================================
+QUESTION: How do we keep tests working in a changing codebase?
+DATE: 2025-10-10
+PLATFORM: LinkedIn
+WORD COUNT: 152
+HASHTAGS: #code #software #testing #automation #ci #chanchito
+================================================================================
+
+Run your tests on every commit. Broken tests should stop you immediately, not surprise you later.
+
+University. Group project. E-commerce app. We wrote tests. Then kept coding. Ran tests before the final demo.
+
+Fifty-three tests failed. Some failed weeks ago. We had no idea which change broke what. Three days debugging before the demo.
+
+My co-founder's freelancing client used CI. Every commit ran all tests. Build failed if any test broke.
+
+First time he broke a test: "Commit rejected. Fix it now." Five minutes to fix. He knew exactly which change caused it.
+
+By project end, their tests still passed. Ours were a mess.
+
+Tests only help if they run constantly. Set up CI to run tests on every commit. Force yourself to fix broken tests immediately. A test that fails silently is worse than no test.
+
+#code #software #testing #automation #ci #chanchito
+
+================================================================================
+
+
+================================================================================
+QUESTION: What testing tools worked best for fast dev cycles?
+DATE: 2025-10-10
+PLATFORM: LinkedIn
+WORD COUNT: 163
+HASHTAGS: #code #software #testing #tools #productivity #chanchito
+================================================================================
+
+Fast tests beat thorough tests in fast dev cycles. If tests are slow, devs don't run them.
+
+Freelancing. Inventory system. We used Selenium for end-to-end tests. Full browser automation. "Thorough" testing.
+
+Each test took two minutes. Full suite: 45 minutes. Nobody ran tests locally. Too slow. We ran them in CI and hoped.
+
+Client asked for rapid changes. We iterated fast. Tests ran once a day. By the time tests failed, we'd pushed five more changes. No idea which broke what.
+
+We switched to Cypress. Same coverage, ten times faster. Full suite: four minutes.
+
+Suddenly, everyone ran tests before every commit. Caught bugs immediately. Faster iterations, fewer production issues.
+
+Pick testing tools where speed matters more than perfection. Tests developers actually run beat comprehensive tests they skip. Fast feedback loops win.
+
+#code #software #testing #tools #productivity #chanchito
+
+================================================================================
+
+
+================================================================================
+QUESTION: What testing tools worked best for fast dev cycles?
+DATE: 2025-10-10
+PLATFORM: LinkedIn
+WORD COUNT: 156
+HASHTAGS: #code #software #testing #jest #unittest #chanchito
+================================================================================
+
+Watch mode changed everything. Tests that run automatically as you code find bugs instantly.
+
+At our previous startup, we used Jest with watch mode. Save a file, tests run automatically. No manual command. No waiting.
+
+I changed a function. Two seconds later: "3 tests failed." Fixed the bug. Saved. Tests passed. Total time: 30 seconds.
+
+My co-founder used a different framework. No watch mode. He had to manually run tests after every change. "npm test." Wait. Check results.
+
+End of day: I'd run my tests 50 times. Caught bugs immediately. He ran his tests five times. Bugs accumulated.
+
+Same code quality standards. Different tools. Massive productivity difference.
+
+Use testing tools with watch mode for fast dev cycles. Tests that run automatically as you code catch bugs when they're fresh in your mind. Manual test running kills momentum.
+
+#code #software #testing #jest #unittest #chanchito
+
+================================================================================
+
+
+================================================================================
+QUESTION: What testing tools worked best for fast dev cycles?
+DATE: 2025-10-10
+PLATFORM: LinkedIn
+WORD COUNT: 160
+HASHTAGS: #code #software #testing #testinglibrary #e2e #chanchito
+================================================================================
+
+Simple tools beat powerful tools when you're moving fast. Less setup means more testing.
+
+Freelancing. E-learning platform. Tight deadline. Client wanted e-e tests.
+
+I suggested Playwright. Powerful. Cross-browser. Multi-language. Setup took three days. Config files. Custom helpers. Environment setup.
+
+My co-founder suggested Testing Library. Simpler. Less powerful. Setup took 30 minutes. One config file.
+
+Week two: I had 10 tests written. Still debugging environment issues. He had 40 tests. All passing.
+
+Week four: His tests caught five production bugs before launch. My sophisticated setup was still being perfected.
+
+Launch day: His simple tests saved the launch. My powerful tests were still in progress.
+
+In fast dev cycles, pick tools you can set up in an hour. Working tests today beat perfect tests next week. Complexity kills speed.
+
+#code #software #testing #testinglibrary #e2e #chanchito
+
+================================================================================
+
+
+

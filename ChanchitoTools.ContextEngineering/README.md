@@ -49,6 +49,23 @@ A comprehensive framework for creating engaging LinkedIn stories from technical 
 - Social media managers
 - Developer advocates
 
+### [Business](./Business/) **(Private - Not in Git)**
+⚠️ **This folder is gitignored and contains sensitive company context.**
+
+Contains company-specific information used for authentic storytelling and content generation:
+- Company background and founding story
+- Founder experiences and journey
+- Storytelling context and guidelines
+- Authentic experiences to draw from in content
+
+**Purpose:**
+- Provides context for AI-generated stories
+- Maintains authentic voice across content
+- Keeps company information private and secure
+- Enables personalized content while using public frameworks
+
+**Note:** If you're using this framework for your organization, create your own Business folder with your company's context. See `Business/README.md` (if available) for template structure.
+
 ### [Documentation](./Documentation/)
 Additional documentation and visual guides for implementing context engineering principles in your projects.
 
@@ -75,11 +92,13 @@ Follow the 3-part structure:
 - **Call to Action** (30-40 words): Actionable advice or reflection question
 
 ### 3. Output
-LinkedIn-ready story (≤200 words) that:
+LinkedIn-ready story (≤200 words) appended to `Generated_Stories.txt` that:
 - Shows rather than tells
 - Creates emotional resonance
 - Provides actionable value
 - Engages the target audience
+- Can be easily copied to any platform
+- Includes metadata for easy searching (question, date, platform)
 
 ## Example Output
 
