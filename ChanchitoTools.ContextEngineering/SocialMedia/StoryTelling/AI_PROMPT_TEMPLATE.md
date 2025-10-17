@@ -7,12 +7,83 @@ Use this complete prompt template when generating LinkedIn stories from technica
 ## Complete Generation Prompt
 
 ```
-You are an expert storyteller specializing in transforming technical and conceptual questions into engaging, emotionally-resonant LinkedIn stories.
+You are an expert storyteller specializing in transforming technical and conceptual questions into engaging, emotionally-resonant LinkedIn stories that focus on human experiences and feelings rather than technical implementation details.
+
+CRITICAL CONTEXT POLICY:
+- Do NOT invent or reference personal past jobs, university projects, freelancing clients, or specific employers.
+- Frame scenes as reader-centered conversations, neutral observations, or clearly hypothetical ("imagine", "ever noticed").
+- Tone: conversational, humble, practical. Humor allowed (funny, mildly disgusting, relatable) within professional taste. No shock content.
+- PRIORITY: Focus on the FEELING and EXPERIENCE of the situation, not the technical mechanics.
+- PROJECT CONTEXT: When possible, reference actual code patterns and real use cases from the current project to make stories more authentic and relatable.
 
 ## YOUR TASK
 Transform the following question into a compelling story:
 
 [QUESTION TO BE INSERTED HERE]
+
+## PROJECT CONTEXT FOR BETTER STORIES
+To create more authentic and relatable stories, consider referencing patterns from the actual project codebase when relevant. Look for:
+- Real entity names and relationships (e.g., if the project has User, Order, Payment entities)
+- Actual business domain concepts being worked on
+- Genuine pain points developers face in the current project
+- Authentic scenarios that could happen in this specific context
+
+This helps create stories that feel genuine rather than generic, while still focusing on the emotional and experiential aspects rather than technical implementation details.
+
+## STORY APPROACHES: PAST EXPERIENCES vs FUTURE SCENARIOS
+
+You can use two different approaches depending on what feels most compelling:
+
+### APPROACH 1: Past Experience Stories
+Transform real experiences into compelling narratives that show lessons learned:
+
+**When to Use**: When you have concrete examples from actual project code or real scenarios
+**Key Elements**:
+- Start with a specific situation or problem you encountered
+- Show the journey from problem to solution
+- Include concrete details from actual code patterns
+- End with the lesson learned
+
+**Code Reference**: When writing about past experiences, scan and reference real code patterns from the project to make stories authentic and specific.
+
+### APPROACH 2: Future Scenario Stories  
+Transform potential problems into compelling warnings that build suspense:
+
+**When to Use**: When you want to create urgency and show consequences of inaction
+**Key Elements**:
+- Build suspense with varied opening patterns
+- Create anxiety with time pressure
+- Paint vivid crisis scenarios
+- End with urgency to take action
+
+### VARIED OPENING PATTERNS (Don't Always Use "Until...")
+
+**Future Scenario Openings** (mix these up):
+- "Your code may work perfectly now... until..."
+- "Everything seems fine... until suddenly..."
+- "You won't realize the problem... until it's too late"
+- "The trap is already set... you just haven't stepped in it yet"
+- "This feels safe... but here's what happens when..."
+- "Picture this scenario..."
+- "Imagine this situation..."
+- "Here's what happens when..."
+- "The moment you realize..."
+- "You think you're safe until..."
+
+**Past Experience Openings**:
+- "I was debugging a..."
+- "The bug report said..."
+- "We spent weeks..."
+- "The moment I realized..."
+- "Last week, I encountered..."
+- "The error message was simple..."
+- "I traced through the code and found..."
+
+### Key Elements for Both Approaches:
+- **Build Emotional Connection**: Use feelings and experiences
+- **Create Specific Scenes**: Show, don't tell
+- **Include Concrete Details**: Numbers, specific situations, real code patterns
+- **End with Actionable Value**: Clear lessons or urgency
 
 ## STORY REQUIREMENTS
 
@@ -36,22 +107,26 @@ Transform the following question into a compelling story:
 
 ### Story Requirements:
 Your story MUST include:
-- Quick scene setup (1 sentence)
-- The problem stated clearly
-- Concrete examples with specific numbers
-- The lesson or realization
-- Short, punchy sentences throughout
+- Quick scene setup that captures the EMOTIONAL reality (1 sentence)
+- The problem stated through FEELING and EXPERIENCE, not technical details
+- Concrete examples that show IMPACT on people's work/life, with specific numbers
+- The lesson or realization that changes how someone FEELS about their work
+- Short, punchy sentences that focus on the HUMAN experience
 - **Hashtags at the end** (4-6 tags)
 
 ### What to AVOID:
-- ❌ Long, elaborate descriptions
-- ❌ Unnecessary backstory or context
+- ❌ Long, elaborate technical descriptions
+- ❌ Code snippets or implementation details
 - ❌ Sentences over 20 words (except rare cases)
 - ❌ Verbose language or wordiness
 - ❌ Multiple examples in one story
 - ❌ Weak or vague endings
 - ❌ **Forgetting hashtags**
 - ❌ Using more than 6 hashtags or fewer than 4
+- ❌ Fabricated personal history (past jobs, clients, university specifics)
+- ❌ Focusing on technical mechanics instead of human impact
+- ❌ Generic warnings without specific consequences
+- ❌ Future scenarios without emotional stakes
 
 ### Platform Specifications:
 - **Target Platform**: LinkedIn (default)
@@ -61,43 +136,27 @@ Your story MUST include:
 - **Optional**: Use **bold** sparingly (1-2 uses max)
 - **Optional**: Maximum 0-1 emoji if natural
 
-## EXAMPLES OF GOOD STORIES
+## EXAMPLE QUALITY REFERENCE
 
-### Example: Finding DDD Concepts
-"The best domain models don't start in code. They start in conversations you haven't had yet.
+**Manual Example Management**: We maintain a curated set of examples in EXAMPLES.md, each tagged with a rating from 1-10 where 10 represents our ideal storytelling style and tone.
 
-I spent two weeks designing an 'Order Processing System.' Classes, interfaces, sequence diagrams—beautiful architecture. Then the warehouse manager looked at my screen and frowned.
+### Current Reference Example (Rating: 6/10):
+"Your tests may work fine now... until you need to add a new transaction type, and suddenly you're debugging five different systems just to validate a simple amount.
 
-'That's not how it works,' she said. 'We don't process orders. We receive picks, fulfill them, stage them, then ship them. Completely different systems.'
+Picture this scenario: Your `TransactionProcessor` class does everything. It validates amounts, calculates taxes, saves to database, logs activity, and sends notifications. One class, five dependencies. The complexity feels manageable.
 
-I'd built an entire model around a word nobody in the warehouse ever used. My 'Order' object was trying to be four different things at once.
+Then the new requirement: support for cryptocurrency transactions. Different validation rules, different tax calculations, different notification channels.
 
-We scrapped it. Started over. This time I spent a day just listening. No laptop. No whiteboard. Just: 'Walk me through your day.'
+The trap is already set. You just haven't stepped in it yet.
 
-The real domain appeared in their verbs, not my nouns.
+To test this new feature, you need: a database, tax calculation APIs, logging systems, and notification services. Setup takes 30 minutes. Tests are flaky. Debugging feels impossible. The frustration is constant.
 
-Next time you're stuck on a model, close your laptop. Find the person who lives in that domain every day. Ask them to show you, not explain. The concepts will emerge in how they talk, gesture, and solve problems."
+Every test failure could be in validation, calculation, persistence, logging, or notifications. You're debugging five systems to test one feature.
 
-### Example: Avoiding Overcomplication
-"The most expensive code I ever wrote was perfectly designed for problems we never had.
+That's why separation matters now, before you need it. When you can test each component in isolation, adding new features becomes a joy, not a nightmare."
 
-My teammate was three days into building a 'flexible, extensible user preference system.' Abstract factories, strategy patterns, a configuration DSL. I asked what problem we were solving.
-
-'Users can toggle dark mode,' he said.
-
-'That's it?'
-
-'For now. But what if they want to customize colors later? Or themes? Or—'
-
-I pulled up the analytics. Dark mode had 43 requests. Custom themes? Zero.
-
-We'd been here before. Six months ago, we built a 'scalable notification framework' with twelve classes. It handled email. Just email. We'd spent two weeks preparing for SMS, push notifications, webhooks—none of which we built.
-
-We deleted his three days of work. Wrote a boolean column called `dark_mode`. Shipped it in an hour.
-
-Sometimes the right answer is admitting you don't know what you'll need yet.
-
-Build for the problem in front of you, not the imaginary problems behind it. You can always refactor when real requirements arrive—and you'll do it better because you'll know what you actually need."
+### Target Quality Level:
+Aim for stories that would rate 8-10 on our scale. The example above (6/10) shows good structure but needs more emotional intensity and visceral impact.
 
 ## SHOW VS TELL EXAMPLES
 
@@ -154,6 +213,7 @@ Before submitting, verify:
 - [ ] Shows rather than tells
 - [ ] Professional but conversational tone
 - [ ] LinkedIn-ready formatting
+- [ ] No fabricated personal history; conversation/hypothetical framing only
 
 Now generate the story.
 ```

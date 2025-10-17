@@ -1,40 +1,40 @@
 # Writing Guidelines: Show, Don't Tell
 
-## Core Principle: Create Scenes, Not Explanations
+## Core Principle: Focus on Feelings and Experiences, Not Technical Details
 
-The difference between good and great stories is **showing** readers an experience instead of **telling** them about it.
+The difference between good and great stories is **showing** readers how something FEELS and the human IMPACT it has, rather than explaining technical mechanics or implementation details.
 
 ---
 
-## Show vs Tell: Technical Examples
+## Show vs Tell: Focus on Human Experience
 
-### Example 1: Finding DDD Concepts
+### Example 1: Finding Real Domain Understanding
 
-❌ **TELLING:**
+❌ **TELLING (Technical Focus):**
 "To find domain concepts, you should talk to domain experts and observe their language patterns."
 
-✅ **SHOWING:**
-"The analyst said 'batch' three times in two minutes. I started writing down every noun she used. By the end of our coffee, I had fifteen concepts—none of which appeared in our codebase."
+✅ **SHOWING (Experience Focus):**
+"The analyst said 'batch' three times in two minutes. I felt lost—like I was speaking a different language. I started writing down every noun she used. By the end of our coffee, I had fifteen concepts—none of which appeared in our codebase. The relief was immediate."
 
 ---
 
-### Example 2: Avoiding Overcomplicated Models
+### Example 2: The Weight of Unnecessary Complexity
 
-❌ **TELLING:**
+❌ **TELLING (Technical Focus):**
 "Developers often add unnecessary complexity when they try to predict future needs."
 
-✅ **SHOWING:**
-"He added five interfaces for a feature that changed twice a year. 'Future-proofing,' he called it. Six months later, we deleted four of them. Nobody had time to understand the maze."
+✅ **SHOWING (Experience Focus):**
+"He added five interfaces for a feature that changed twice a year. 'Future-proofing,' he called it. Six months later, we deleted four of them. The weight lifted immediately—nobody had time to understand the maze he'd built."
 
 ---
 
-### Example 3: Modeling Change Over Time
+### Example 3: The Frustration of Lost Context
 
-❌ **TELLING:**
+❌ **TELLING (Technical Focus):**
 "You need to consider how values evolve when designing your data model."
 
-✅ **SHOWING:**
-"The bug report said 'incorrect score.' But when we looked at the database, it was right—for now. We'd been overwriting history. Every update erased what came before."
+✅ **SHOWING (Experience Focus):**
+"The bug report said 'incorrect score.' But when we looked at the database, it was right—for now. The frustration was real. We'd been overwriting history. Every update erased what came before, leaving us with no way to explain the journey."
 
 ---
 
@@ -123,7 +123,7 @@ Change: "We split it. Suddenly, the code made sense."
 
 ### ✅ Do:
 - Write like you're talking to a colleague over coffee
-- Use "I," "we," "you" freely
+- Prefer "you" and conversational framing over personal anecdotes
 - Keep sentences short and punchy
 - Vary sentence length for rhythm
 - Use contractions (it's, don't, we're)
@@ -136,6 +136,7 @@ Change: "We split it. Suddenly, the code made sense."
 - Sound preachy or superior
 - Use corporate jargon
 - Be overly formal
+- Invent personal past jobs, university projects, or client stories
 
 ---
 
@@ -173,7 +174,7 @@ Characters make abstract concepts relatable. Use:
 
 When crafting your story scene, include:
 
-- [ ] **Where**: Specific location (office, call, whiteboard, code review)
+- [ ] **Where**: Specific location (office, call, whiteboard, code review) or clearly hypothetical ("imagine this")
 - [ ] **Who**: Character(s) involved
 - [ ] **What happened**: Concrete action or event
 - [ ] **The problem/tension**: What wasn't working
@@ -237,9 +238,93 @@ Ask: "If someone reads this and closes LinkedIn, what do they take away?"
 
 ---
 
+## Using Project Context for Authentic Stories
+
+### Why Project Context Matters
+When generating stories, reference actual patterns from your current project to create more authentic and relatable content:
+
+- **Real Entity Names**: If your project has `User`, `Order`, `Payment` entities, use them
+- **Actual Business Domain**: Reference the real business problems you're solving
+- **Genuine Pain Points**: Draw from actual developer frustrations in the project
+- **Authentic Scenarios**: Create stories that could realistically happen in your context
+
+### How to Incorporate Project Context
+- Look at your entity models and domain concepts
+- Consider the real business rules and constraints you're working with
+- Think about actual user scenarios and edge cases
+- Reference real naming conventions and patterns from your codebase
+
+This makes stories feel genuine rather than generic, while still focusing on the emotional and experiential aspects rather than technical implementation details.
+
+## Story Approaches: Past Experiences vs Future Scenarios
+
+### Choose Your Approach Based on Impact
+You can tell stories about past experiences or create future scenarios - both have their place:
+
+### APPROACH 1: Past Experience Stories
+**When to Use**: When you have concrete examples from actual project code or real scenarios
+**Structure**: Problem encountered → Journey to solution → Lesson learned
+**Code Reference**: When writing about past experiences, scan and reference real code patterns from the project to make stories authentic and specific.
+
+### APPROACH 2: Future Scenario Stories  
+**When to Use**: When you want to create urgency and show consequences of inaction
+**Structure**: Hypothetical situation → Crisis builds → Urgent call to action
+
+### Varied Opening Patterns (Don't Always Use "Until...")
+
+**Future Scenario Openings** (mix these up):
+- "Your code may work perfectly now... until..."
+- "Picture this scenario..."
+- "Imagine this situation..."
+- "Here's what happens when..."
+- "The moment you realize..."
+- "You think you're safe until..."
+
+**Past Experience Openings**:
+- "I was debugging a..."
+- "The bug report said..."
+- "We spent weeks..."
+- "The moment I realized..."
+- "Last week, I encountered..."
+- "The error message was simple..."
+
+### Key Elements for Suspenseful Future Scenarios:
+
+#### 1. **Build Suspense with "Until..."**
+- "Your code may work perfectly now... until..."
+- "Everything seems fine... until suddenly..."
+- "This feels safe... but here's what happens when..."
+
+#### 2. **Create Anxiety with Time Pressure**
+- "suddenly," "overnight," "without warning"
+- "The trap is already set... you just haven't stepped in it yet"
+- "You won't realize the problem... until it's too late"
+
+#### 3. **Paint the Crisis Vividly**
+- "Every business method has database calls buried inside"
+- "Your validation logic is scattered across seven different classes"
+- "Testing becomes impossible because everything depends on everything"
+
+#### 4. **Show the Emotional Cost**
+- "Two weeks of refactoring," "impossible to test," "limited every future decision"
+- "The frustration was overwhelming," "The panic was real"
+- "Every change felt like walking through a maze"
+
+#### 5. **End with Urgency**
+- "That's why separation matters now, before you need it"
+- "Fix this before your next major feature request"
+- "Your future self will thank you for this decision today"
+
+### Suspense and Anxiety Language Patterns:
+- **Suspense Builders**: "Your code may work perfectly now... until..."
+- **Anxiety Triggers**: "suddenly," "overnight," "without warning"
+- **Crisis Amplifiers**: "Every business method," "All your validation," "Testing becomes impossible"
+- **Cost Emphasizers**: "Two weeks of refactoring," "impossible to test," "limited every future decision"
+- **Urgency Drivers**: "That's why separation matters now," "Fix this before," "Your future self will thank you"
+
 ## Remember
 
 **People don't remember facts. They remember stories.**
 
-Your goal isn't to teach—it's to make someone *see* the concept through a real moment. When they see it, they'll remember it.
+Your goal isn't to teach—it's to make someone *feel* the concept through a vivid, human experience. If you invent, frame it as hypothetical—not as your personal past. Use your project's real context to make stories authentic and relatable.
 
