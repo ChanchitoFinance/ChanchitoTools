@@ -182,26 +182,31 @@ namespace ChanchitoBackend.System.Abstractions.E2ETesting
                 // Get all entity types
                 var entityTypes = dbContext.Model.GetEntityTypes();
 
-                // Disable foreign key constraints for SQLite
+                // For non-in-memory databases (PostgreSQL), use TRUNCATE CASCADE
                 if (!_useInMemoryDatabase)
                 {
-                    await dbContext.Database.ExecuteSqlRawAsync("PRAGMA foreign_keys = OFF");
-                }
+                    var tableNames = entityTypes
+                        .Select(t => t.GetTableName())
+                        .Where(name => !string.IsNullOrEmpty(name))
+                        .ToList();
 
-                // Delete all data from all tables
-                foreach (var entityType in entityTypes)
-                {
-                    var tableName = entityType.GetTableName();
-                    if (!string.IsNullOrEmpty(tableName))
+                    if (tableNames.Any())
                     {
-                        await dbContext.Database.ExecuteSqlRawAsync($"DELETE FROM \"{tableName}\"");
+                        var tableList = string.Join(", ", tableNames);
+                        await dbContext.Database.ExecuteSqlRawAsync($"TRUNCATE TABLE {tableList} CASCADE");
                     }
                 }
-
-                // Re-enable foreign key constraints for SQLite
-                if (!_useInMemoryDatabase)
+                else
                 {
-                    await dbContext.Database.ExecuteSqlRawAsync("PRAGMA foreign_keys = ON");
+                    // For in-memory database, delete row by row
+                    foreach (var entityType in entityTypes)
+                    {
+                        var tableName = entityType.GetTableName();
+                        if (!string.IsNullOrEmpty(tableName))
+                        {
+                            await dbContext.Database.ExecuteSqlRawAsync($"DELETE FROM \"{tableName}\"");
+                        }
+                    }
                 }
 
                 await dbContext.SaveChangesAsync();

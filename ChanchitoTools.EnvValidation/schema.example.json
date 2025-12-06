@@ -1,0 +1,74 @@
+{
+  "DATABASE_URL": {
+    "type": "url",
+    "required": true,
+    "description": "Database connection URL"
+  },
+  "API_PORT": {
+    "type": "integer",
+    "required": false,
+    "default": 3000,
+    "min": 1,
+    "max": 65535,
+    "description": "API server port"
+  },
+  "NODE_ENV": {
+    "type": "string",
+    "required": true,
+    "enum": ["development", "staging", "production"],
+    "description": "Execution environment"
+  },
+  "LOG_LEVEL": {
+    "type": "string",
+    "required": false,
+    "default": "info",
+    "enum": ["debug", "info", "warn", "error"],
+    "description": "Logging level"
+  },
+  "ENABLE_CACHE": {
+    "type": "boolean",
+    "required": false,
+    "default": true,
+    "description": "Enable cache"
+  },
+  "MAX_CONNECTIONS": {
+    "type": "integer",
+    "required": false,
+    "default": 100,
+    "min": 1,
+    "max": 1000,
+    "description": "Maximum number of connections"
+  },
+  "MIN_WORKERS": {
+    "type": "integer",
+    "required": false,
+    "default": 2,
+    "min": 1,
+    "description": "Minimum number of workers (only min specified)"
+  },
+  "MAX_RETRIES": {
+    "type": "integer",
+    "required": false,
+    "default": 5,
+    "max": 10,
+    "description": "Maximum number of retries (only max specified)"
+  },
+  "ADMIN_EMAIL": {
+    "type": "email",
+    "required": true,
+    "description": "Administrator email"
+  },
+  "API_KEY": {
+    "type": "string",
+    "required": true,
+    "min_length": 32,
+    "pattern": "^[A-Za-z0-9]+$",
+    "description": "Secret API key"
+  },
+  "CONFIG_JSON": {
+    "type": "json",
+    "required": false,
+    "description": "Additional configuration in JSON format"
+  }
+}
+

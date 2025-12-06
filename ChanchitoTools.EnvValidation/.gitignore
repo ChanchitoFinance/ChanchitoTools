@@ -1,0 +1,11 @@
+*.swp
+*.swo
+*~
+.DS_Store
+
+test_*.lua
+*_test.lua
+
+# schema.json
+# env.schema.json
+

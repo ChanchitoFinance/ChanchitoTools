@@ -14,25 +14,26 @@ This file contains specifications for different social media platforms. **Linked
 - **Engagement**: Longer posts often perform better than short ones
 
 ### Content Guidelines:
-- **Opening**: Strong, value-forward statement
-- **Body**: Story-based, show expertise through experience
-- **Ending**: Call to action or valuable insight
+- **Opening**: Very specific, niche question targeting a precise problem
+- **Body**: Clear point of view expressed with logical reasoning and observable patterns
+- **Ending**: Actionable insight or reflection question
 - **Format**: Short paragraphs with line breaks
 
 ### Best Practices:
-- ✅ Professional yet personal voice
-- ✅ Share lessons and insights
-- ✅ Use concrete examples from work
+- ✅ Professional yet conversational voice
+- ✅ Express clear points of view with confidence
+- ✅ Use logical reasoning and observable patterns
 - ✅ Short, punchy sentences
 - ✅ **Always include hashtags** (4-6 tags)
 - ✅ Format: #code #software #topic #chanchito
 - ✅ Bold text for emphasis (1-2 uses)
 - ✅ Emoji sparingly (0-1 per post)
+- ✅ Never invent experiences or scenarios
 
 ### Hashtag Strategy:
 **Required Format:**
 ```
-[Story content]
+[Content]
 
 #code #software #[topic] #[lesson1] #[lesson2] #chanchito
 ```
@@ -43,7 +44,13 @@ This file contains specifications for different social media platforms. **Linked
 3. **#chanchito** (last) - Brand identity
 4. **1-3 topic tags** (middle) - Specific to story content
 
-**Topic Tag Examples:**
+**Priority Topic Tags (Student/Early Career Focus):**
+- #StudentLife #OpenSource #Entrepreneurship #CareerGrowth
+- #Learning #FirstJob #Internship #TechCareer
+- #CodingBootcamp #SelfTaught #TechSkills #DeveloperJourney
+- #StartupLife #TechCommunity #Mentorship #CareerAdvice
+
+**General Topic Tag Examples:**
 - #security #bugprevention #testing
 - #conventions #teamwork #codequality
 - #refactoring #architecture #cleancode
@@ -62,34 +69,34 @@ This file contains specifications for different social media platforms. **Linked
 
 ### Example Format:
 ```
-[Strong opening statement about value]
+[Very specific, niche question]
 
-[First paragraph: Quick scene setup]
+[First paragraph: Clear position statement]
 
-[Second paragraph: The problem with concrete examples]
+[Second paragraph: Logical reasoning with observable patterns]
 
-[Third paragraph: The lesson or outcome]
+[Third paragraph: Cause-effect connections]
 
-[Direct call to action]
+[Actionable insight or reflection]
 
 #code #software #topic #chanchito
 ```
 
 **Complete Example:**
 ```
-Security bugs don't show up in your error logs. They show up in the news.
+Why do code reviews catch style issues but miss architectural problems?
 
-My co-founder and I built an e-learning platform. We had a bug list.
+The pattern is consistent: style violations are obvious and easy to spot. Tabs vs spaces. Variable naming. Code formatting. These surface immediately during review.
 
-UI glitch? Annoying. Slow load? Should optimize. Password reset didn't validate tokens? We'll get to it.
+But architectural problems hide deeper. They're not about how code looks—they're about how systems connect. A controller calling a repository directly might look fine. The code is clean. The style is correct. But the architecture is wrong.
 
-Week two: "I just reset another user's password."
+The reason? Style is visible. Architecture requires understanding relationships. Reviewers can spot style issues without context. Architecture issues require understanding the whole system.
 
-We took the site offline immediately. Three accounts compromised. Client lost a major customer.
+This is why architectural decisions need explicit discussion, not just code review. Style catches itself. Architecture needs intention.
 
-Treat security bugs like production fires. Improper authentication, missing authorization, unvalidated input—these don't just break features, they break trust. Test security paths first.
+Consider your review process. Are you catching what matters, or just what's easy to see?
 
-#code #software #security #tip #chanchito
+#code #software #architecture #codereview #chanchito
 ```
 
 ---

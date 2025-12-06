@@ -33,6 +33,10 @@ A simple, reusable command management system for .NET applications with dependen
 ![](./ChanchitoTools.ContextEngineering/Documentation/Images/image.png)
 A comprehensive toolkit for crafting effective AI prompts and content generation strategies. Transform technical questions into engaging, emotionally-resonant narratives optimized for social media platforms, featuring storytelling frameworks, multi-platform support, and ready-to-use AI prompt templates.
 
+### [Env Validation](./ChanchitoTools.EnvValidation/)
+![](./ChanchitoTools.EnvValidation/Documentation/image.png)
+A portable environment variable validation library with a core Lua implementation and adapters for Python and JavaScript. Define schemas in JSON for complete language portability, with support for multiple data types, advanced validations (enum, min/max, patterns), default values, and clear error messages. The same schema file works across all supported languages, ensuring consistent validation throughout your stack. Includes adapters using `lupa` (Python) and `fengari` (JavaScript) to execute the core Lua validation logic.
+
 ## Getting Started
 
 1. **Browse the Tools** - Each tool has its own directory with detailed documentation

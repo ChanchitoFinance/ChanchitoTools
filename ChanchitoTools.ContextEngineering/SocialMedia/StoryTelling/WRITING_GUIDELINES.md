@@ -136,7 +136,8 @@ Change: "We split it. Suddenly, the code made sense."
 - Sound preachy or superior
 - Use corporate jargon
 - Be overly formal
-- Invent personal past jobs, university projects, or client stories
+- Invent or fabricate experiences, stories, or scenarios
+- Create fictional narratives or anecdotes
 
 ---
 
@@ -256,75 +257,59 @@ When generating stories, reference actual patterns from your current project to 
 
 This makes stories feel genuine rather than generic, while still focusing on the emotional and experiential aspects rather than technical implementation details.
 
-## Story Approaches: Past Experiences vs Future Scenarios
+## Expressing Points of View Through Observations and Principles
 
-### Choose Your Approach Based on Impact
-You can tell stories about past experiences or create future scenarios - both have their place:
+### NEVER Invent Experiences or Scenarios
+**CRITICAL RULE**: Do not create fictional stories, scenarios, or experiences. Focus on expressing genuine points of view based on observable patterns and principles.
 
-### APPROACH 1: Past Experience Stories
-**When to Use**: When you have concrete examples from actual project code or real scenarios
-**Structure**: Problem encountered → Journey to solution → Lesson learned
-**Code Reference**: When writing about past experiences, scan and reference real code patterns from the project to make stories authentic and specific.
+### APPROACH: Direct Point of View Expression
+**When to Use**: Always - express your perspective directly through logic and observable patterns
+**Structure**: Clear position → Logical reasoning → Observable patterns → Actionable insight
 
-### APPROACH 2: Future Scenario Stories  
-**When to Use**: When you want to create urgency and show consequences of inaction
-**Structure**: Hypothetical situation → Crisis builds → Urgent call to action
+### Opening Question Patterns (Very Specific, Niche):
 
-### Varied Opening Patterns (Don't Always Use "Until...")
+**Pattern 1: Why Questions**
+- "Why does X happen when Y should prevent it?"
+- "Why do teams struggle with X despite Y being the solution?"
 
-**Future Scenario Openings** (mix these up):
-- "Your code may work perfectly now... until..."
-- "Picture this scenario..."
-- "Imagine this situation..."
-- "Here's what happens when..."
-- "The moment you realize..."
-- "You think you're safe until..."
+**Pattern 2: What Questions**
+- "What actually causes X when everyone says Y?"
+- "What happens when your codebase treats X as Y?"
 
-**Past Experience Openings**:
-- "I was debugging a..."
-- "The bug report said..."
-- "We spent weeks..."
-- "The moment I realized..."
-- "Last week, I encountered..."
-- "The error message was simple..."
+**Pattern 3: When Questions**
+- "When X occurs, why does Y always follow?"
+- "When teams do X, what pattern emerges in Y?"
 
-### Key Elements for Suspenseful Future Scenarios:
+### Key Elements for Point of View Expression:
 
-#### 1. **Build Suspense with "Until..."**
-- "Your code may work perfectly now... until..."
-- "Everything seems fine... until suddenly..."
-- "This feels safe... but here's what happens when..."
+#### 1. **State Your Position Clearly**
+- Direct statements: "X leads to Y because..."
+- Principle statements: "X isn't optional. It's how you achieve Y"
+- Cause-effect: "If you don't have X, Y will follow"
 
-#### 2. **Create Anxiety with Time Pressure**
-- "suddenly," "overnight," "without warning"
-- "The trap is already set... you just haven't stepped in it yet"
-- "You won't realize the problem... until it's too late"
+#### 2. **Support with Logical Reasoning**
+- Explain the "why" behind your perspective
+- Connect to underlying principles
+- Show cause-effect relationships
 
-#### 3. **Paint the Crisis Vividly**
-- "Every business method has database calls buried inside"
-- "Your validation logic is scattered across seven different classes"
-- "Testing becomes impossible because everything depends on everything"
+#### 3. **Reference Observable Patterns** (Not Fabricated Stories)
+- "Every time X happens, you'll notice Y"
+- "Teams that do X tend to experience Y"
+- "The pattern is consistent: X leads to Y"
 
-#### 4. **Show the Emotional Cost**
-- "Two weeks of refactoring," "impossible to test," "limited every future decision"
-- "The frustration was overwhelming," "The panic was real"
-- "Every change felt like walking through a maze"
+#### 4. **Provide Concrete Insights**
+- General observations, not fictional scenarios
+- Patterns you've observed in real contexts
+- Principles that hold true across situations
 
-#### 5. **End with Urgency**
-- "That's why separation matters now, before you need it"
-- "Fix this before your next major feature request"
-- "Your future self will thank you for this decision today"
-
-### Suspense and Anxiety Language Patterns:
-- **Suspense Builders**: "Your code may work perfectly now... until..."
-- **Anxiety Triggers**: "suddenly," "overnight," "without warning"
-- **Crisis Amplifiers**: "Every business method," "All your validation," "Testing becomes impossible"
-- **Cost Emphasizers**: "Two weeks of refactoring," "impossible to test," "limited every future decision"
-- **Urgency Drivers**: "That's why separation matters now," "Fix this before," "Your future self will thank you"
+#### 5. **End with Actionable Insight**
+- "Consider X. It changes how you approach Y"
+- "Remember: X always leads to Y. Plan accordingly"
+- "Ask yourself: Are you experiencing X because of Y?"
 
 ## Remember
 
-**People don't remember facts. They remember stories.**
+**People remember clear perspectives backed by solid reasoning.**
 
-Your goal isn't to teach—it's to make someone *feel* the concept through a vivid, human experience. If you invent, frame it as hypothetical—not as your personal past. Use your project's real context to make stories authentic and relatable.
+Your goal is to express a genuine point of view that helps readers understand principles and patterns. Never invent experiences or scenarios. Instead, focus on observable patterns, logical reasoning, and clear insights that provide genuine value.
 
