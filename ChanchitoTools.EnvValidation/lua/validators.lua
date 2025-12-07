@@ -221,8 +221,13 @@ end
     Validates a URL
 ]]
 function M.validate_url(value, schema)
-    -- Basic URL pattern
-    local url_pattern = "^https?://[%w%-_%.]+[%w%-_%.%?%#%=&/]*$"
+    -- More permissive URL pattern supporting http, https, ftp, file, and other protocols
+    -- Pattern breakdown:
+    -- ^[%w%+%-%.]+://  - Protocol (http, https, ftp, file, etc.)
+    -- [%w%-_%.]+       - Domain or hostname (at least one character)
+    -- [%w%-_%.%:]*     - Optional port (colon followed by digits)
+    -- [%w%-_%.%?%#%=&/%%]* - Path, query, fragment (various URL components)
+    local url_pattern = "^[%w%+%-%.]+://[%w%-_%.]+[%w%-_%.%:]*[%w%-_%.%?%#%=&/%%]*$"
     
     if not string.match(value, url_pattern) then
         return {
