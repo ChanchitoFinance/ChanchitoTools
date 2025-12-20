@@ -18,24 +18,33 @@ This repository contains practical, real-world examples that demonstrate various
 Each tool in this repository has its own license. Please check the LICENSE file in each tool's directory for specific licensing terms.
 
 ### [Firebase Web Client](./ChanchitoTools.FirebaseWebClient/)
+
 ![](./ChanchitoTools.FirebaseWebClient/docs/images/image1.png)
 A lightweight, client-side only web application demonstrating Firebase authentication methods and identity token retrieval.
 
 ### [Testing Abstractions](./ChanchitoTools.TestingAbstractions/)
+
 ![](./ChanchitoTools.TestingAbstractions/Documentation/Images/image1.png)  
 A comprehensive .NET testing library that provides robust testing utilities, abstractions, and helpers to streamline your testing workflow. Features include test data builders, custom assertions, database testing support, and integration testing infrastructure.
 
 ### [Command Management](./ChanchitoTools.CommandManagement/)
+
 ![](./ChanchitoTools.CommandManagement/Documentation/Images/image.png)  
 A simple, reusable command management system for .NET applications with dependency injection support. Features include multiple command execution, command groups, built-in logging, environment safety checks, and seamless integration with ASP.NET Core applications.
 
 ### [Context Engineering](./ChanchitoTools.ContextEngineering/)
+
 ![](./ChanchitoTools.ContextEngineering/Documentation/Images/image.png)
 A comprehensive toolkit for crafting effective AI prompts and content generation strategies. Transform technical questions into engaging, emotionally-resonant narratives optimized for social media platforms, featuring storytelling frameworks, multi-platform support, and ready-to-use AI prompt templates.
 
 ### [Env Validation](./ChanchitoTools.EnvValidation/)
+
 ![](./ChanchitoTools.EnvValidation/Documentation/image.png)
 A portable environment variable validation library with a core Lua implementation and adapters for Python and JavaScript. Define schemas in JSON for complete language portability, with support for multiple data types, advanced validations (enum, min/max, patterns), default values, and clear error messages. The same schema file works across all supported languages, ensuring consistent validation throughout your stack. Includes adapters using `lupa` (Python) and `fengari` (JavaScript) to execute the core Lua validation logic.
+
+### [Google Pay](./ChanchitoTools.GooglePay/)
+
+A reusable Google Pay integration module for web applications. Features a complete book store demo with Google Pay checkout functionality. The Google Pay logic is modular and can be easily copied and pasted into any other app for quick integration. See [ChanchitoTools.GooglePay/README.md](./ChanchitoTools.GooglePay/README.md) for detailed setup and usage instructions.
 
 ## Getting Started
 
