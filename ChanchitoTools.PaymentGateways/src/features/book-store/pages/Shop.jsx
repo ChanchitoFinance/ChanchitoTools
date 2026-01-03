@@ -20,6 +20,11 @@ export const Shop = () => {
   const merchantName =
     import.meta.env.VITE_GOOGLE_PAY_MERCHANT_NAME || "Book Store Demo";
 
+  const isGooglePayTest =
+    import.meta.env.VITE_GOOGLE_PAY_ENVIRONMENT === "TEST";
+  const isPayPalTest = import.meta.env.VITE_PAYPAL_ENVIRONMENT === "sandbox";
+  const isTestMode = isGooglePayTest || isPayPalTest;
+
   const handleAddToCart = (book) => {
     if (isPurchased(book.id)) {
       alert("You already own this book! You can download it from the library.");
@@ -43,11 +48,20 @@ export const Shop = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-2">
             📚 {merchantName}
           </h1>
-          <p className="text-gray-600">Google Pay Integration Testing</p>
-          <p className="text-sm text-yellow-700 mt-2">
-            ⚠️ Internal Testing Only - $1 per book for payment gateway
-            integration testing
+          <p className="text-gray-600">
+            {isTestMode
+              ? "Payment Gateway Integration Testing"
+              : "Digital Book Store"}
           </p>
+          {isTestMode && (
+            <p className="text-sm text-yellow-700 mt-2">
+              ⚠️ Internal Testing Only - Payment gateway integration testing
+              with
+              {isGooglePayTest && " Google Pay TEST"}
+              {isGooglePayTest && isPayPalTest && " and"}
+              {isPayPalTest && " PayPal SANDBOX"}
+            </p>
+          )}
         </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">

@@ -1,4 +1,3 @@
-import React from "react";
 import { useGooglePay } from "../hooks/useGooglePay";
 
 export const GooglePayButton = ({

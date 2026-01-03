@@ -42,9 +42,9 @@ A comprehensive toolkit for crafting effective AI prompts and content generation
 ![](./ChanchitoTools.EnvValidation/Documentation/image.png)
 A portable environment variable validation library with a core Lua implementation and adapters for Python and JavaScript. Define schemas in JSON for complete language portability, with support for multiple data types, advanced validations (enum, min/max, patterns), default values, and clear error messages. The same schema file works across all supported languages, ensuring consistent validation throughout your stack. Includes adapters using `lupa` (Python) and `fengari` (JavaScript) to execute the core Lua validation logic.
 
-### [Google Pay](./ChanchitoTools.GooglePay/)
+### [Payment Gateways Integration](./ChanchitoTools.PaymentGateways/)
 
-A reusable Google Pay integration module for web applications. Features a complete book store demo with Google Pay checkout functionality. The Google Pay logic is modular and can be easily copied and pasted into any other app for quick integration. See [ChanchitoTools.GooglePay/README.md](./ChanchitoTools.GooglePay/README.md) for detailed setup and usage instructions.
+A reusable Google Pay and PayPal wallets integration modules for web applications. Features a complete book store demo with Google Pay and PayPal checkout functionality. The logic for each of both wallets is modular and can be easily copied and pasted into any other app for quick integration. See [ChanchitoTools.PaymentGateways/README.md](./ChanchitoTools.PaymentGateways/README.md) for detailed setup and usage instructions.
 
 ## Getting Started
 
